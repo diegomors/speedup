@@ -1,0 +1,38 @@
+name: speedup
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: IBM Plex Sans
+      fonts:
+        - asset: assets/fonts/IBMPlexSans-Bold.ttf
+        - asset: assets/fonts/IBMPlexSans-BoldItalic.ttf
+        - asset: assets/fonts/IBMPlexSans-ExtraLight.ttf
+        - asset: assets/fonts/IBMPlexSans-ExtraLightItalic.ttf
+        - asset: assets/fonts/IBMPlexSans-Italic.ttf
+        - asset: assets/fonts/IBMPlexSans-Light.ttf
+        - asset: assets/fonts/IBMPlexSans-LightItalic.ttf
+        - asset: assets/fonts/IBMPlexSans-Medium.ttf
+        - asset: assets/fonts/IBMPlexSans-MediumItalic.ttf
+        - asset: assets/fonts/IBMPlexSans-Regular.ttf
+        - asset: assets/fonts/IBMPlexSans-SemiBold.ttf
+        - asset: assets/fonts/IBMPlexSans-SemiBoldItalic.ttf
+        - asset: assets/fonts/IBMPlexSans-Thin.ttf
+        - asset: assets/fonts/IBMPlexSans-ThinItalic.ttf
