@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:speedup/my_button.dart';
 import 'package:speedup/my_carousel_item.dart';
 
+import 'my_text.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -31,21 +33,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text(
+                    const MyText(
                       'Seu novo título',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 24,
-                        color: Color.fromRGBO(255, 255, 255, 0.8),
-                      ),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 24,
                     ),
-                    const Text(
+                    const MyText(
                       'Nome do produto',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 40,
-                        color: Color.fromRGBO(255, 255, 255, 0.8),
-                      ),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 40,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 40),
@@ -63,9 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 MyCarouselItem(),
                                 Positioned(
                                   bottom: 30,
-                                  child: MyButton(
-                                    text: 'Saber mais',
-                                  ),
+                                  child: MyButton(text: 'Saiba mais'),
                                 ),
                               ],
                             ),
@@ -79,14 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     const SizedBox(
                       width: 461,
-                      child: Text(
+                      child: MyText(
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam gravida morbi diam consequat eget sit at a. '
                         'Imperdiet nisl, aliquam eget nibh cras orci neque enim. Ante mauris consectetur at mattis odio non non consequat. ',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 18,
-                          color: Color.fromRGBO(255, 255, 255, 0.8),
-                        ),
+                        fontWeight: FontWeight.w400,
+                        fontSize: 18,
                         textAlign: TextAlign.justify,
                       ),
                     ),

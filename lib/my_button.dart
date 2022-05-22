@@ -13,8 +13,14 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 230,
-      height: 45,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 25,
+        vertical: 10,
+      ),
+      constraints: const BoxConstraints(
+        maxWidth: 230,
+        maxHeight: 45,
+      ),
       decoration: BoxDecoration(
         color: background,
         borderRadius: const BorderRadius.all(Radius.circular(53)),
@@ -31,7 +37,13 @@ class MyButton extends StatelessWidget {
           ),
         ],
       ),
-      child: Center(child: Text(text)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Flexible(child: Text(text)),
+        ],
+      ),
     );
   }
 }
