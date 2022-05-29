@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:speedup/my_button.dart';
-import 'package:speedup/my_carousel_item.dart';
 
-import 'my_text.dart';
+import '../../shared/shared.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class MyProductPage extends StatelessWidget {
+  const MyProductPage({Key? key}) : super(key: key);
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return Container(
+      constraints: const BoxConstraints(maxHeight: 710),
+      child: Stack(
         children: [
           Container(
             color: const Color.fromRGBO(0, 13, 37, 1),
