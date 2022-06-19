@@ -15,7 +15,7 @@ class MyLandingPage extends StatelessWidget {
           // MyWelcomePage(),
           // MySummaryPage(),
           MyServicePage(),
-          MyProductPage(),
+          // MyProductPage(),
           // MyContactPage(),
           // MyFooterPage(),
         ],
