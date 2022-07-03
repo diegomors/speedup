@@ -8,6 +8,10 @@ class MyProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return context.isDesktop ? const MyProductWide() : const MyProductNarrow();
+    return context.screenSize == ScreenSize.wide
+        ? const MyProductWide()
+        : context.screenSize == ScreenSize.medium
+            ? const MyProductMedium()
+            : const MyProductNarrow();
   }
 }

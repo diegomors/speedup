@@ -1,10 +1,11 @@
+import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../shared/shared.dart';
 import 'widgets.dart';
 
-class MyProductWide extends StatelessWidget {
-  const MyProductWide({Key? key}) : super(key: key);
+class MyProductMedium extends StatelessWidget {
+  const MyProductMedium({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +28,20 @@ class MyProductWide extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 fontSize: 40,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    buildCarrouselItem(),
-                    buildCarrouselItem(showButton: true),
-                    buildCarrouselItem(),
-                  ],
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 40.0),
+                  child: ExpandablePageView(
+                    controller: PageController(
+                      viewportFraction: 1 / 2,
+                      initialPage: 1,
+                    ),
+                    children: [
+                      buildCarrouselItem(),
+                      buildCarrouselItem(showButton: true),
+                      buildCarrouselItem(),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(
@@ -56,12 +62,10 @@ class MyProductWide extends StatelessWidget {
   }
 
   buildCarrouselItem({bool showButton = false}) {
-    return Flexible(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0),
-        child: MyCarouselItem(
-          showButton: showButton,
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+      child: MyCarouselItem(
+        showButton: showButton,
       ),
     );
   }

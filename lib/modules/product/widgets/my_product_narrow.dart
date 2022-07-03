@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../shared/shared.dart';
+import 'widgets.dart';
 
 class MyProductNarrow extends StatelessWidget {
   const MyProductNarrow({Key? key}) : super(key: key);
@@ -9,58 +10,45 @@ class MyProductNarrow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       constraints: const BoxConstraints(maxHeight: 710),
-      child: Stack(
-        children: [
-          Container(
-            color: const Color.fromRGBO(0, 13, 37, 1),
-          ),
-          Container(
-            color: const Color.fromRGBO(255, 255, 255, 0.05),
-          ),
-          Container(
-            color: const Color.fromARGB(11, 136, 123, 123),
-          ),
-          Row(
+      child: MyProductBackground(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 40.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    MyText(
+                      'Produtos',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 24,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 24),
+              SizedBox(
+                height: 400,
+                child: PageView(
+                  controller: PageController(
+                    viewportFraction: 1 / 2.2,
+                    initialPage: 0,
+                  ),
+                  padEnds: false,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: const [
-                          MyText(
-                            'Produtos',
-                            fontWeight: FontWeight.w500,
-                            fontSize: 24,
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 24),
-                    SizedBox(
-                      height: 400,
-                      child: PageView(
-                        controller: PageController(
-                          viewportFraction: 1 / 2,
-                          initialPage: 1,
-                        ),
-                        children: [
-                          buildCarouselItem(),
-                          buildCarouselItem(),
-                          buildCarouselItem(),
-                        ],
-                      ),
-                    ),
+                    buildCarouselItem(),
+                    buildCarouselItem(),
+                    buildCarouselItem(),
                   ],
                 ),
               ),
             ],
           ),
-        ],
+        ),
       ),
     );
   }
