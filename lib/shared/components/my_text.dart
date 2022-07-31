@@ -6,6 +6,7 @@ class MyText extends StatelessWidget {
   final double fontSize;
   final TextAlign? textAlign;
   final Color color;
+  final TextOverflow? overflow;
 
   const MyText(
     this.text, {
@@ -14,6 +15,7 @@ class MyText extends StatelessWidget {
     required this.fontSize,
     this.textAlign,
     this.color = const Color.fromRGBO(255, 255, 255, 0.8),
+    this.overflow,
   }) : super(key: key);
 
   @override
@@ -26,6 +28,7 @@ class MyText extends StatelessWidget {
         color: color,
       ),
       textAlign: textAlign,
+      overflow: overflow,
     );
   }
 }
