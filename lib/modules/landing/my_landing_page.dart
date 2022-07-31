@@ -14,7 +14,7 @@ class MyLandingPage extends StatelessWidget {
         children: const [
           // MyWelcomePage(),
           // MySummaryPage(),
-          MyServicePage(),
+          // MyServicePage(),
           MyProductPage(),
           // MyContactPage(),
           // MyFooterPage(),

@@ -8,9 +8,13 @@ class MyServicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: context.isDesktop ? Colors.amber : Colors.blue,
+      color: context.screenSize == ScreenSize.wide
+          ? Colors.amber
+          : context.screenSize == ScreenSize.medium
+              ? Colors.blue
+              : Colors.orange,
       width: double.infinity,
-      height: 710,
+      height: 700,
     );
   }
 }
