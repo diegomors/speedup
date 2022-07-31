@@ -63,10 +63,13 @@ class MyProductNarrow extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: const [
-              MyText(
-                'Titulo do produto',
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
+              Flexible(
+                child: MyText(
+                  'Titulo do produto',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ],
           ),
