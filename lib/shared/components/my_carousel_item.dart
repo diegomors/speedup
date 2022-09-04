@@ -16,8 +16,8 @@ class MyCarouselItem extends StatelessWidget {
       fit: BoxFit.scaleDown,
       child: Container(
         constraints: const BoxConstraints(
-          maxWidth: 350,
-          maxHeight: 350,
+          maxWidth: 461,
+          maxHeight: 461,
         ),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
