@@ -9,10 +9,10 @@ class MyProductNarrow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(maxHeight: 710),
+      constraints: const BoxConstraints(maxHeight: 552),
       child: MyProductBackground(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 40.0),
+          padding: const EdgeInsets.only(top: 70.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,10 +55,12 @@ class MyProductNarrow extends StatelessWidget {
 
   buildCarouselItem() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 17.5),
       child: Column(
         children: [
-          const Flexible(child: MyCarouselItem()),
+          const Flexible(child: MyCarouselItem(
+            size: 162,
+          )),
           const SizedBox(height: 24),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
