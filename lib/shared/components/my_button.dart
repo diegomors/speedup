@@ -18,8 +18,8 @@ class MyButton extends StatelessWidget {
         vertical: 10,
       ),
       constraints: const BoxConstraints(
-        maxWidth: 230,
-        maxHeight: 45,
+        maxWidth: 231,
+        maxHeight: 47,
       ),
       decoration: BoxDecoration(
         color: background,
