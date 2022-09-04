@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../shared/shared.dart';
+
 class MyProductBackground extends StatelessWidget {
   final Widget child;
 
@@ -15,12 +17,15 @@ class MyProductBackground extends StatelessWidget {
         Container(
           color: const Color.fromRGBO(0, 13, 37, 1),
         ),
-        Container(
-          color: const Color.fromRGBO(255, 255, 255, 0.05),
-        ),
-        Container(
-          color: const Color.fromARGB(11, 136, 123, 123),
-        ),
+        if (context.screenSize == ScreenSize.medium || context.screenSize == ScreenSize.wide) ...[
+          Container(
+            color: const Color.fromRGBO(255, 255, 255, 0.05),
+          ),
+          if (context.screenSize == ScreenSize.wide)
+            Container(
+              color: const Color.fromRGBO(255, 255, 255, 0.05),
+            ),
+        ],
         child,
       ],
     );
