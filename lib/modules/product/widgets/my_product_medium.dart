@@ -66,6 +66,7 @@ class MyProductMedium extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: MyCarouselItem(
         showButton: showButton,
+        size: 461,
       ),
     );
   }

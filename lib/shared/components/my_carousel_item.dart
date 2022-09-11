@@ -4,10 +4,12 @@ import '../shared.dart';
 
 class MyCarouselItem extends StatelessWidget {
   final bool showButton;
+  final double size;
 
   const MyCarouselItem({
     Key? key,
     this.showButton = false,
+    required this.size,
   }) : super(key: key);
 
   @override
@@ -15,9 +17,9 @@ class MyCarouselItem extends StatelessWidget {
     return FittedBox(
       fit: BoxFit.scaleDown,
       child: Container(
-        constraints: const BoxConstraints(
-          maxWidth: 461,
-          maxHeight: 461,
+        constraints: BoxConstraints(
+          maxWidth: size,
+          maxHeight: size,
         ),
         decoration: const BoxDecoration(
           gradient: LinearGradient(

@@ -58,7 +58,9 @@ class MyProductNarrow extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Column(
         children: [
-          const Flexible(child: MyCarouselItem()),
+          const Flexible(child: MyCarouselItem(
+            size: 162,
+          )),
           const SizedBox(height: 24),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
