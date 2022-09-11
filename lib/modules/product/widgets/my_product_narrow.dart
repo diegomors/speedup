@@ -12,7 +12,7 @@ class MyProductNarrow extends StatelessWidget {
       constraints: const BoxConstraints(maxHeight: 552),
       child: MyProductBackground(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 40.0),
+          padding: const EdgeInsets.only(top: 70.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
