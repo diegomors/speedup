@@ -9,7 +9,7 @@ class MyProductNarrow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(maxHeight: 710),
+      constraints: const BoxConstraints(maxHeight: 552),
       child: MyProductBackground(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 40.0),

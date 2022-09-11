@@ -41,7 +41,14 @@ class MyButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Flexible(child: Text(text)),
+          Flexible(
+              child: Text(
+            text,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w400,
+            ),
+          )),
         ],
       ),
     );
