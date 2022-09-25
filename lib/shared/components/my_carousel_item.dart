@@ -28,7 +28,7 @@ class MyCarouselItem extends StatelessWidget {
             colors: [
               // Color.fromRGBO(82, 213, 255, 1),
               // Color.fromRGBO(165, 244, 255, 1),
-              Colors.red,
+              Colors.green,
               Colors.amber,
             ],
           ),
