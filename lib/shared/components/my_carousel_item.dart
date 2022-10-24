@@ -26,8 +26,8 @@ class MyCarouselItem extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Colors.red,
               Colors.amber,
+              Colors.red,
             ],
           ),
           borderRadius: BorderRadius.all(Radius.circular(16.0)),
