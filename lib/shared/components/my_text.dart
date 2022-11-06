@@ -14,7 +14,7 @@ class MyText extends StatelessWidget {
     this.fontWeight = FontWeight.w500,
     required this.fontSize,
     this.textAlign,
-    this.color = const Color.fromRGBO(255, 255, 255, 0.8),
+    this.color = Colors.red,
     this.overflow,
   }) : super(key: key);
 
