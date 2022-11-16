@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../modules.dart';
@@ -14,7 +12,7 @@ class MyLandingPage extends StatelessWidget {
         children: const [
           // MyWelcomePage(),
           // MySummaryPage(),
-          // MyServicePage(),
+          MyServicePage(),
           MyProductPage(),
           // MyContactPage(),
           // MyFooterPage(),
