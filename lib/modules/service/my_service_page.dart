@@ -1,3 +1,4 @@
+import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/shared.dart';
@@ -22,41 +23,47 @@ class MyServicePage extends StatelessWidget {
                 initialPage: 0,
               ),
               children: [
-                buildContainer(context, addmargin: true),
-                buildContainer(context, addmargin: true),
-                buildContainer(context, addmargin: true),
-                buildContainer(context, addmargin: true),
-                buildContainer(context, addmargin: true),
+                buildContainer(context),
+                buildContainer(context),
+                buildContainer(context),
+                buildContainer(context),
+                buildContainer(context),
               ],
             )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                buildContainer(context),
-                const SizedBox(width: 75),
-                buildContainer(context),
-                const SizedBox(width: 75),
-                buildContainer(context),
-                const SizedBox(width: 75),
-                buildContainer(context),
-                const SizedBox(width: 75),
-                buildContainer(context),
-              ],
+          : PageView.builder(
+              controller: PageController(
+                viewportFraction: 1 / 5,
+                initialPage: 0,
+              ),
+              padEnds: false,
+              itemCount: 1,
+              itemBuilder: (context, index) => Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  buildContainer(context),
+                  buildContainer(context),
+                  buildContainer(context),
+                  buildContainer(context),
+                  buildContainer(context),
+                ],
+              ),
             ),
     );
   }
 
-  buildContainer(BuildContext context, {bool addmargin = false}) {
-    return Container(
-      width: context.screenSize == ScreenSize.narrow ? 72 : 132,
-      height: context.screenSize == ScreenSize.narrow ? 72 : 132,
-      margin: addmargin ? const EdgeInsets.only(right: 75) : EdgeInsets.zero,
-      constraints: context.screenSize == ScreenSize.narrow
-          ? const BoxConstraints(minHeight: 72, minWidth: 72)
-          : const BoxConstraints(minHeight: 132, minWidth: 132),
-      decoration: const BoxDecoration(
-        color: Color.fromRGBO(161, 232, 255, 0.2),
-        shape: BoxShape.circle,
+  buildContainer(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 37.5, right: 37.5),
+      child: Container(
+        width: context.screenSize == ScreenSize.narrow ? 72 : 132,
+        height: context.screenSize == ScreenSize.narrow ? 72 : 132,
+        // constraints: context.screenSize == ScreenSize.narrow
+        //     ? const BoxConstraints(minHeight: 72, minWidth: 72)
+        //     : const BoxConstraints(minHeight: 132, minWidth: 132),
+        decoration: const BoxDecoration(
+          color: Color.fromRGBO(161, 232, 255, 0.2),
+          shape: BoxShape.circle,
+        ),
       ),
     );
   }
