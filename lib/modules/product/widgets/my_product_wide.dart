@@ -28,7 +28,8 @@ class MyProductWide extends StatelessWidget {
                 fontSize: 40,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 40),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 40),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
