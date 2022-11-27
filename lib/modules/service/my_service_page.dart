@@ -7,7 +7,7 @@ class MyServicePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final containerSize = context.screenSize == ScreenSize.narrow ? 72.0 : 132.0;
+    final containerSize = context.width > 400 ? 132.0 : 72.0;
 
     return Container(
       color: const Color.fromRGBO(0, 13, 37, 1),
@@ -25,11 +25,11 @@ class MyServicePage extends StatelessWidget {
                     ),
                     padEnds: false,
                     children: [
-                      buildContainer(context, containerSize),
-                      buildContainer(context, containerSize),
-                      buildContainer(context, containerSize),
-                      buildContainer(context, containerSize),
-                      buildContainer(context, containerSize),
+                      buildContainer(context, containerSize, addMargin: true),
+                      buildContainer(context, containerSize, addMargin: true),
+                      buildContainer(context, containerSize, addMargin: true),
+                      buildContainer(context, containerSize, addMargin: true),
+                      buildContainer(context, containerSize, addMargin: true),
                     ],
                   ),
                 ),
@@ -56,13 +56,16 @@ class MyServicePage extends StatelessWidget {
     );
   }
 
-  buildContainer(BuildContext context, double containerSize) {
+  buildContainer(BuildContext context, double containerSize, {bool addMargin = false}) {
     return Container(
-      width: context.screenSize == ScreenSize.narrow ? 72 : 132,
-      height: context.screenSize == ScreenSize.narrow ? 72 : 132,
-      decoration: const BoxDecoration(
-        color: Color.fromRGBO(161, 232, 255, 0.2),
-        shape: BoxShape.circle,
+      padding: addMargin ? const EdgeInsets.symmetric(horizontal: 12) : null,
+      child: Container(
+        width: containerSize,
+        height: containerSize,
+        decoration: const BoxDecoration(
+          color: Color.fromRGBO(161, 232, 255, 0.2),
+          shape: BoxShape.circle,
+        ),
       ),
     );
   }
