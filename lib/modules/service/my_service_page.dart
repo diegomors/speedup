@@ -58,14 +58,12 @@ class MyServicePage extends StatelessWidget {
 
   buildContainer(BuildContext context, double containerSize, {bool addMargin = false}) {
     return Container(
-      padding: addMargin ? const EdgeInsets.symmetric(horizontal: 12) : null,
-      child: Container(
-        width: containerSize,
-        height: containerSize,
-        decoration: const BoxDecoration(
-          color: Color.fromRGBO(161, 232, 255, 0.2),
-          shape: BoxShape.circle,
-        ),
+      width: containerSize,
+      height: containerSize,
+      margin: addMargin ? const EdgeInsets.symmetric(horizontal: 12) : null,
+      decoration: const BoxDecoration(
+        color: Color.fromRGBO(161, 232, 255, 0.2),
+        shape: BoxShape.circle,
       ),
     );
   }
