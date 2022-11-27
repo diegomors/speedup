@@ -11,6 +11,7 @@ dependencies:
   expandable_page_view: ^1.0.14
   flutter:
     sdk: flutter
+  flutter_svg: ^1.1.6
 
 dev_dependencies:
   flutter_lints: ^1.0.0
@@ -19,6 +20,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
 
   fonts:
     - family: IBM Plex Sans
