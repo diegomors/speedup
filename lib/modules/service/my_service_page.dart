@@ -66,9 +66,14 @@ class MyServicePage extends StatelessWidget {
         color: Color.fromRGBO(161, 232, 255, 0.2),
         shape: BoxShape.circle,
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(35),
-        child: SvgPicture.asset('assets/images/$image.svg'),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(35),
+            child: SvgPicture.asset('assets/images/$image.svg'),
+          ),
+        ],
       ),
     );
   }
