@@ -26,11 +26,16 @@ class MyServicePage extends StatelessWidget {
                     ),
                     padEnds: false,
                     children: [
-                      buildContainer(context, containerSize, image: 'service_icon_1', addMargin: true),
-                      buildContainer(context, containerSize, image: 'service_icon_2', addMargin: true),
-                      buildContainer(context, containerSize, image: 'service_icon_3', addMargin: true),
-                      buildContainer(context, containerSize, image: 'service_icon_4', addMargin: true),
-                      buildContainer(context, containerSize, image: 'service_icon_5', addMargin: true),
+                      buildContainer(context, containerSize,
+                          image: 'service_icon_1', addMargin: true),
+                      buildContainer(context, containerSize,
+                          image: 'service_icon_2', addMargin: true),
+                      buildContainer(context, containerSize,
+                          image: 'service_icon_3', addMargin: true),
+                      buildContainer(context, containerSize,
+                          image: 'service_icon_4', addMargin: true),
+                      buildContainer(context, containerSize,
+                          image: 'service_icon_5', addMargin: true),
                     ],
                   ),
                 ),
@@ -44,11 +49,16 @@ class MyServicePage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      buildContainer(context, containerSize, image: 'service_icon_1'),
-                      buildContainer(context, containerSize, image: 'service_icon_2'),
-                      buildContainer(context, containerSize, image: 'service_icon_3'),
-                      buildContainer(context, containerSize, image: 'service_icon_4'),
-                      buildContainer(context, containerSize, image: 'service_icon_5'),
+                      buildContainer(context, containerSize,
+                          image: 'service_icon_1'),
+                      buildContainer(context, containerSize,
+                          image: 'service_icon_2'),
+                      buildContainer(context, containerSize,
+                          image: 'service_icon_3'),
+                      buildContainer(context, containerSize,
+                          image: 'service_icon_4'),
+                      buildContainer(context, containerSize,
+                          image: 'service_icon_5'),
                     ],
                   ),
                 ),
@@ -57,7 +67,8 @@ class MyServicePage extends StatelessWidget {
     );
   }
 
-  buildContainer(BuildContext context, double containerSize, {bool addMargin = false, required String image}) {
+  buildContainer(BuildContext context, double containerSize,
+      {bool addMargin = false, required String image}) {
     return Container(
       width: containerSize,
       height: containerSize,
