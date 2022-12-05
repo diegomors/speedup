@@ -15,77 +15,75 @@ class MyServicePage extends StatelessWidget {
       width: double.infinity,
       height: 700,
       child: context.screenSize == ScreenSize.narrow
-          ? Column(
+          ? PageView(
+              controller: PageController(
+                viewportFraction: 1 / 3.6,
+                initialPage: 0,
+              ),
+              padEnds: false,
               children: [
-                SizedBox(
-                  height: containerSize,
-                  child: PageView(
-                    controller: PageController(
-                      viewportFraction: 1 / 3.6,
-                      initialPage: 0,
-                    ),
-                    padEnds: false,
-                    children: [
-                      buildContainer(context, containerSize,
-                          image: 'service_icon_1', addMargin: true),
-                      buildContainer(context, containerSize,
-                          image: 'service_icon_2', addMargin: true),
-                      buildContainer(context, containerSize,
-                          image: 'service_icon_3', addMargin: true),
-                      buildContainer(context, containerSize,
-                          image: 'service_icon_4', addMargin: true),
-                      buildContainer(context, containerSize,
-                          image: 'service_icon_5', addMargin: true),
-                    ],
-                  ),
-                ),
+                buildContainer(context, containerSize,
+                    image: 'service_icon_1', addMargin: true),
+                buildContainer(context, containerSize,
+                    image: 'service_icon_2', addMargin: true),
+                buildContainer(context, containerSize,
+                    image: 'service_icon_3', addMargin: true),
+                buildContainer(context, containerSize,
+                    image: 'service_icon_4', addMargin: true),
+                buildContainer(context, containerSize,
+                    image: 'service_icon_5', addMargin: true),
               ],
             )
-          : Column(
-              children: [
-                SizedBox(
-                  width: 963,
-                  height: containerSize,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      buildContainer(context, containerSize,
-                          image: 'service_icon_1'),
-                      buildContainer(context, containerSize,
-                          image: 'service_icon_2'),
-                      buildContainer(context, containerSize,
-                          image: 'service_icon_3'),
-                      buildContainer(context, containerSize,
-                          image: 'service_icon_4'),
-                      buildContainer(context, containerSize,
-                          image: 'service_icon_5'),
-                    ],
-                  ),
-                ),
-              ],
+          : SizedBox(
+              width: 963,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  buildContainer(context, containerSize,
+                      image: 'service_icon_1'),
+                  buildContainer(context, containerSize,
+                      image: 'service_icon_2'),
+                  buildContainer(context, containerSize,
+                      image: 'service_icon_3'),
+                  buildContainer(context, containerSize,
+                      image: 'service_icon_4'),
+                  buildContainer(context, containerSize,
+                      image: 'service_icon_5'),
+                ],
+              ),
             ),
     );
   }
 
   buildContainer(BuildContext context, double containerSize,
       {bool addMargin = false, required String image}) {
-    return Container(
-      width: containerSize,
-      height: containerSize,
-      margin: addMargin ? const EdgeInsets.symmetric(horizontal: 12) : null,
-      decoration: const BoxDecoration(
-        color: Color.fromRGBO(161, 232, 255, 0.2),
-        shape: BoxShape.circle,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(35),
-            child: SvgPicture.asset('assets/images/$image.svg'),
+    return Column(
+      children: [
+        Container(
+          width: containerSize,
+          height: containerSize,
+          margin: addMargin ? const EdgeInsets.symmetric(horizontal: 12) : null,
+          decoration: const BoxDecoration(
+            color: Color.fromRGBO(161, 232, 255, 0.2),
+            shape: BoxShape.circle,
           ),
-        ],
-      ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(35),
+                child: SvgPicture.asset('assets/images/$image.svg'),
+              ),
+            ],
+          ),
+        ),
+        const MyText(
+          'Título do\nserviço',
+          fontWeight: FontWeight.w500,
+          fontSize: 24,
+          textAlign: TextAlign.center,
+        ),
+      ],
     );
   }
 }
