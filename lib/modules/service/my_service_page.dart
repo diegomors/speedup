@@ -16,35 +16,54 @@ class MyServicePage extends StatelessWidget {
       height: 700,
       child: Column(
         children: [
-          // TODO: adicionar texto "Serviços" e "Política de serviço >"
           context.screenSize == ScreenSize.narrow
-              ? SizedBox(
-                  height: 218,
-                  child: PageView(
-                    controller: PageController(
-                      viewportFraction: 1 / 3.6,
-                      initialPage: 0,
+              ? Column(
+                  children: [
+                    buildTitle(),
+                    SizedBox(
+                      height: 218,
+                      child: PageView(
+                        controller: PageController(
+                          viewportFraction: 1 / 3.6,
+                          initialPage: 0,
+                        ),
+                        padEnds: false,
+                        children: [
+                          buildContainer(context, containerSize,
+                              image: 'service_icon_1', addMargin: true),
+                          buildContainer(context, containerSize,
+                              image: 'service_icon_2', addMargin: true),
+                          buildContainer(context, containerSize,
+                              image: 'service_icon_3', addMargin: true),
+                          buildContainer(context, containerSize,
+                              image: 'service_icon_4', addMargin: true),
+                          buildContainer(context, containerSize,
+                              image: 'service_icon_5', addMargin: true),
+                        ],
+                      ),
                     ),
-                    padEnds: false,
-                    children: [
-                      buildContainer(context, containerSize, image: 'service_icon_1', addMargin: true),
-                      buildContainer(context, containerSize, image: 'service_icon_2', addMargin: true),
-                      buildContainer(context, containerSize, image: 'service_icon_3', addMargin: true),
-                      buildContainer(context, containerSize, image: 'service_icon_4', addMargin: true),
-                      buildContainer(context, containerSize, image: 'service_icon_5', addMargin: true),
-                    ],
-                  ),
+                  ],
                 )
               : SizedBox(
                   width: 963,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: Column(
                     children: [
-                      buildContainer(context, containerSize, image: 'service_icon_1'),
-                      buildContainer(context, containerSize, image: 'service_icon_2'),
-                      buildContainer(context, containerSize, image: 'service_icon_3'),
-                      buildContainer(context, containerSize, image: 'service_icon_4'),
-                      buildContainer(context, containerSize, image: 'service_icon_5'),
+                      buildTitle(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          buildContainer(context, containerSize,
+                              image: 'service_icon_1'),
+                          buildContainer(context, containerSize,
+                              image: 'service_icon_2'),
+                          buildContainer(context, containerSize,
+                              image: 'service_icon_3'),
+                          buildContainer(context, containerSize,
+                              image: 'service_icon_4'),
+                          buildContainer(context, containerSize,
+                              image: 'service_icon_5'),
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -54,7 +73,8 @@ class MyServicePage extends StatelessWidget {
   }
 
   // TODO: transformar em widget chamado "MyServiceItem"
-  buildContainer(BuildContext context, double containerSize, {bool addMargin = false, required String image}) {
+  buildContainer(BuildContext context, double containerSize,
+      {bool addMargin = false, required String image}) {
     return Column(
       children: [
         Container(
@@ -80,6 +100,25 @@ class MyServicePage extends StatelessWidget {
           fontWeight: FontWeight.w500,
           fontSize: 24,
           textAlign: TextAlign.center,
+        ),
+      ],
+    );
+  }
+
+  // TODO: transformar em widget chamado "MyServiceTitle"
+  buildTitle() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: const [
+        MyText(
+          'Serviços',
+          fontWeight: FontWeight.w500,
+          fontSize: 24,
+        ),
+        MyText(
+          'Política de serviço >',
+          fontWeight: FontWeight.w400,
+          fontSize: 16,
         ),
       ],
     );
