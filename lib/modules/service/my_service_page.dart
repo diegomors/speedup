@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../shared/shared.dart';
+import 'widgets/widgets.dart';
 
 class MyServicePage extends StatelessWidget {
   const MyServicePage({Key? key}) : super(key: key);
@@ -19,7 +18,12 @@ class MyServicePage extends StatelessWidget {
           context.screenSize == ScreenSize.narrow
               ? Column(
                   children: [
-                    buildTitle(),
+                    const MyServiceTitle(
+                      title: 'inicio',
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
                     SizedBox(
                       height: 218,
                       child: PageView(
@@ -29,16 +33,26 @@ class MyServicePage extends StatelessWidget {
                         ),
                         padEnds: false,
                         children: [
-                          buildContainer(context, containerSize,
-                              image: 'service_icon_1', addMargin: true),
-                          buildContainer(context, containerSize,
-                              image: 'service_icon_2', addMargin: true),
-                          buildContainer(context, containerSize,
-                              image: 'service_icon_3', addMargin: true),
-                          buildContainer(context, containerSize,
-                              image: 'service_icon_4', addMargin: true),
-                          buildContainer(context, containerSize,
-                              image: 'service_icon_5', addMargin: true),
+                          MyServiceItem(
+                              containerSize: containerSize,
+                              image: 'service_icon_1',
+                              addMargin: true),
+                          MyServiceItem(
+                              containerSize: containerSize,
+                              image: 'service_icon_2',
+                              addMargin: true),
+                          MyServiceItem(
+                              containerSize: containerSize,
+                              image: 'service_icon_3',
+                              addMargin: true),
+                          MyServiceItem(
+                              containerSize: containerSize,
+                              image: 'service_icon_4',
+                              addMargin: true),
+                          MyServiceItem(
+                              containerSize: containerSize,
+                              image: 'service_icon_5',
+                              addMargin: true),
                         ],
                       ),
                     ),
@@ -48,19 +62,29 @@ class MyServicePage extends StatelessWidget {
                   width: 963,
                   child: Column(
                     children: [
-                      buildTitle(),
+                      const MyServiceTitle(
+                        title: 'inicio',
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          buildContainer(context, containerSize,
+                          MyServiceItem(
+                              containerSize: containerSize,
                               image: 'service_icon_1'),
-                          buildContainer(context, containerSize,
+                          MyServiceItem(
+                              containerSize: containerSize,
                               image: 'service_icon_2'),
-                          buildContainer(context, containerSize,
+                          MyServiceItem(
+                              containerSize: containerSize,
                               image: 'service_icon_3'),
-                          buildContainer(context, containerSize,
+                          MyServiceItem(
+                              containerSize: containerSize,
                               image: 'service_icon_4'),
-                          buildContainer(context, containerSize,
+                          MyServiceItem(
+                              containerSize: containerSize,
                               image: 'service_icon_5'),
                         ],
                       ),
@@ -69,58 +93,6 @@ class MyServicePage extends StatelessWidget {
                 ),
         ],
       ),
-    );
-  }
-
-  // TODO: transformar em widget chamado "MyServiceItem"
-  buildContainer(BuildContext context, double containerSize,
-      {bool addMargin = false, required String image}) {
-    return Column(
-      children: [
-        Container(
-          width: containerSize,
-          height: containerSize,
-          margin: addMargin ? const EdgeInsets.symmetric(horizontal: 12) : null,
-          decoration: const BoxDecoration(
-            color: Color.fromRGBO(161, 232, 255, 0.2),
-            shape: BoxShape.circle,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(35),
-                child: SvgPicture.asset('assets/images/$image.svg'),
-              ),
-            ],
-          ),
-        ),
-        const MyText(
-          'Título do\nserviço',
-          fontWeight: FontWeight.w500,
-          fontSize: 24,
-          textAlign: TextAlign.center,
-        ),
-      ],
-    );
-  }
-
-  // TODO: transformar em widget chamado "MyServiceTitle"
-  buildTitle() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        MyText(
-          'Serviços',
-          fontWeight: FontWeight.w500,
-          fontSize: 24,
-        ),
-        MyText(
-          'Política de serviço >',
-          fontWeight: FontWeight.w400,
-          fontSize: 16,
-        ),
-      ],
     );
   }
 }
