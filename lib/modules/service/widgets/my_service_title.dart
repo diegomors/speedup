@@ -12,20 +12,26 @@ class MyServiceTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        MyText(
-          'Serviços',
-          fontWeight: FontWeight.w500,
-          fontSize: 24,
+    return Padding(
+      padding: const EdgeInsets.only(top: 240.37),
+      child: SizedBox(
+        height: 40.0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            MyText(
+              'Serviços',
+              fontWeight: FontWeight.w500,
+              fontSize: 24,
+            ),
+            MyText(
+              'Política de serviço >',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+            ),
+          ],
         ),
-        MyText(
-          'Política de serviço >',
-          fontWeight: FontWeight.w400,
-          fontSize: 16,
-        ),
-      ],
+      ),
     );
   }
 }
