@@ -58,37 +58,40 @@ class MyServicePage extends StatelessWidget {
                     ),
                   ],
                 )
-              : SizedBox(
-                  width: 963,
-                  child: Column(
-                    children: [
-                      const MyServiceTitle(
-                        title: 'inicio',
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          MyServiceItem(
-                              containerSize: containerSize,
-                              image: 'service_icon_1'),
-                          MyServiceItem(
-                              containerSize: containerSize,
-                              image: 'service_icon_2'),
-                          MyServiceItem(
-                              containerSize: containerSize,
-                              image: 'service_icon_3'),
-                          MyServiceItem(
-                              containerSize: containerSize,
-                              image: 'service_icon_4'),
-                          MyServiceItem(
-                              containerSize: containerSize,
-                              image: 'service_icon_5'),
-                        ],
-                      ),
-                    ],
+              : Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  child: SizedBox(
+                    width: 963,
+                    child: Column(
+                      children: [
+                        const MyServiceTitle(
+                          title: 'inicio',
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            MyServiceItem(
+                                containerSize: containerSize,
+                                image: 'service_icon_1'),
+                            MyServiceItem(
+                                containerSize: containerSize,
+                                image: 'service_icon_2'),
+                            MyServiceItem(
+                                containerSize: containerSize,
+                                image: 'service_icon_3'),
+                            MyServiceItem(
+                                containerSize: containerSize,
+                                image: 'service_icon_4'),
+                            MyServiceItem(
+                                containerSize: containerSize,
+                                image: 'service_icon_5'),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
         ],
