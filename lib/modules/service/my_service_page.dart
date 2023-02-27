@@ -16,47 +16,53 @@ class MyServicePage extends StatelessWidget {
       child: Column(
         children: [
           context.screenSize == ScreenSize.narrow
-              ? Column(
-                  children: [
-                    const MyServiceTitle(
-                      title: 'inicio',
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    SizedBox(
-                      height: 218,
-                      child: PageView(
-                        controller: PageController(
-                          viewportFraction: 1 / 3.6,
-                          initialPage: 0,
-                        ),
-                        padEnds: false,
-                        children: [
-                          MyServiceItem(
-                              containerSize: containerSize,
-                              image: 'service_icon_1',
-                              addMargin: true),
-                          MyServiceItem(
-                              containerSize: containerSize,
-                              image: 'service_icon_2',
-                              addMargin: true),
-                          MyServiceItem(
-                              containerSize: containerSize,
-                              image: 'service_icon_3',
-                              addMargin: true),
-                          MyServiceItem(
-                              containerSize: containerSize,
-                              image: 'service_icon_4',
-                              addMargin: true),
-                          MyServiceItem(
-                              containerSize: containerSize,
-                              image: 'service_icon_5',
-                              addMargin: true),
-                        ],
+              ? Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 32,
+                  ),
+                  child: Column(
+                    children: [
+                      const MyServiceTitle(
+                        title: 'inicio',
                       ),
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      SizedBox(
+                        height: 218,
+                        child: PageView(
+                          controller: PageController(
+                            viewportFraction: 1 / 3.6,
+                            initialPage: 0,
+                          ),
+                          padEnds: false,
+                          children: [
+                            MyServiceItem(
+                                containerSize: containerSize,
+                                image: 'service_icon_1',
+                                addMargin: true),
+                            MyServiceItem(
+                                containerSize: containerSize,
+                                image: 'service_icon_2',
+                                addMargin: true),
+                            MyServiceItem(
+                                containerSize: containerSize,
+                                image: 'service_icon_3',
+                                addMargin: true),
+                            MyServiceItem(
+                                containerSize: containerSize,
+                                image: 'service_icon_4',
+                                addMargin: true),
+                            MyServiceItem(
+                                containerSize: containerSize,
+                                image: 'service_icon_5',
+                                addMargin: true),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 )
               : Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 32),
