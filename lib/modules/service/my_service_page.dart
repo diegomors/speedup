@@ -18,8 +18,11 @@ class MyServicePage extends StatelessWidget {
           context.screenSize == ScreenSize.narrow
               ? Column(
                   children: [
-                    const MyServiceTitle(
-                      title: 'inicio',
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24),
+                      child: MyServiceTitle(
+                        title: 'inicio',
+                      ),
                     ),
                     const SizedBox(
                       height: 40,
