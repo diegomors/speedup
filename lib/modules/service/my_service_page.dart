@@ -21,7 +21,8 @@ class MyServicePage extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24),
                       child: MyServiceTitle(
-                        title: 'inicio',
+                        title: 'Serviços',
+                        subtitle: 'Política de serviço >',
                       ),
                     ),
                     const SizedBox(
@@ -68,7 +69,8 @@ class MyServicePage extends StatelessWidget {
                     child: Column(
                       children: [
                         const MyServiceTitle(
-                          title: 'inicio',
+                          title: 'Serviços',
+                          subtitle: 'Política de serviço >',
                         ),
                         const SizedBox(
                           height: 40,

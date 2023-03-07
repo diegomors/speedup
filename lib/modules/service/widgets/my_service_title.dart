@@ -4,10 +4,12 @@ import '../../../shared/components/my_text.dart';
 
 class MyServiceTitle extends StatelessWidget {
   final String title;
+  final String subtitle;
 
   const MyServiceTitle({
     Key? key,
     required this.title,
+    required this.subtitle,
   }) : super(key: key);
 
   @override
@@ -16,14 +18,14 @@ class MyServiceTitle extends StatelessWidget {
       padding: const EdgeInsets.only(top: 240.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
+        children: [
           MyText(
-            'Serviços',
+            title,
             fontWeight: FontWeight.w500,
             fontSize: 24,
           ),
           MyText(
-            'Política de serviço >',
+            subtitle,
             fontWeight: FontWeight.w400,
             fontSize: 16,
           ),
