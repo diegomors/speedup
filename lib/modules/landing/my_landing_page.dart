@@ -11,7 +11,7 @@ class MyLandingPage extends StatelessWidget {
       child: ListView(
         children: const [
           // MyWelcomePage(),
-          // MySummaryPage(),
+          MySummaryPage(),
           MyServicePage(),
           MyProductPage(),
           // MyContactPage(),
