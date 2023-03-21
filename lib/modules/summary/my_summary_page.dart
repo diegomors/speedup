@@ -9,34 +9,52 @@ class MySummaryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(maxHeight: 1091),
+      constraints: const BoxConstraints(maxHeight: 705),
       child: MySummaryBackground(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 96.0, bottom: 240.37),
-          child: Container(
-            width: 1439,
-            height: 638.63,
-            alignment: Alignment.center,
+        child: Center(
+          // TODO tornar largura do texto dinamica
+          child: SizedBox(
+            width: 550,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
-                SizedBox(
-                  width: 460,
-                  height: 52,
-                  child: MyText(
-                    'Olá! Eu sou o Ivaldo CS',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 40,
-                  ),
+                MyText(
+                  'Olá! Eu sou o Nome da Pessoa',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 40,
+                  textAlign: TextAlign.justify,
                 ),
-                SizedBox(
-                  width: 460,
-                  height: 115,
-                  child: MyText(
-                    'Sou Engenheiro de Software e Desenvolvedor Fullstack com mais de 12 anos de experiência. Que tal explorar um pouco mais de mim e do meu trabalho? Oi, pode me chamar de Diego! Eu sou Desenvolvedor Fullstack. Que tal explorar um pouco mais de mim e do meu trabalho?',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 18,
+                SizedBox(height: 24.0),
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      WidgetSpan(
+                        child: MyText(
+                          'Sou Engenheiro de Software e ',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18,
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                      WidgetSpan(
+                        child: MyText(
+                          'Desenvolvedor Fullstack',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18,
+                          textAlign: TextAlign.justify,
+                          color: Color.fromRGBO(165, 233, 255, 1),
+                        ),
+                      ),
+                      WidgetSpan(
+                        child: MyText(
+                          ' com mais de 12 anos de experiência. Que tal explorar um pouco mais de mim e do meu trabalho? Oi, pode me chamar de Diego! Eu sou Desenvolvedor Fullstack. Que tal explorar um pouco mais de mim e do meu trabalho?',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18,
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
