@@ -8,54 +8,74 @@ class MySummaryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const style = TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 18,
+      color: Color.fromRGBO(255, 255, 255, 1),
+      fontFamily: 'IBMPlexSansRegular',
+    );
+
+    // TODO trocar instalacao de fontes para dependencia google_fonts
+
     return Container(
       constraints: const BoxConstraints(maxHeight: 705),
       child: MySummaryBackground(
         child: Center(
-          // TODO tornar largura do texto dinamica
+          // TODO tornar largura do texto dinamica de acordo com o nome
           child: SizedBox(
             width: 550,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
-                MyText(
+              children: [
+                const MyText(
                   'Olá! Eu sou o Nome da Pessoa',
                   fontWeight: FontWeight.w500,
                   fontSize: 40,
                   textAlign: TextAlign.justify,
+                  color: Color.fromRGBO(255, 255, 255, 1),
                 ),
-                SizedBox(height: 24.0),
+                const SizedBox(height: 24.0),
                 Text.rich(
                   TextSpan(
                     children: [
-                      WidgetSpan(
-                        child: MyText(
-                          'Sou Engenheiro de Software e ',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                          textAlign: TextAlign.justify,
+                      const TextSpan(
+                        text: 'Sou Engenheiro de Software e ',
+                      ),
+                      TextSpan(
+                        text: 'Desenvolvedor Fullstack',
+                        style: style.copyWith(
+                          color: const Color.fromRGBO(165, 233, 255, 1),
+                          fontFamily: 'IBMPlexSansBold',
                         ),
                       ),
-                      WidgetSpan(
-                        child: MyText(
-                          'Desenvolvedor Fullstack',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                          textAlign: TextAlign.justify,
-                          color: Color.fromRGBO(165, 233, 255, 1),
+                      const TextSpan(
+                        text: ' com ',
+                      ),
+                      TextSpan(
+                        text: 'mais de 12 anos de experiência',
+                        style: style.copyWith(
+                          color: const Color.fromRGBO(165, 233, 255, 1),
+                          fontFamily: 'IBMPlexSansBold',
                         ),
                       ),
-                      WidgetSpan(
-                        child: MyText(
-                          ' com mais de 12 anos de experiência. Que tal explorar um pouco mais de mim e do meu trabalho? Oi, pode me chamar de Diego! Eu sou Desenvolvedor Fullstack. Que tal explorar um pouco mais de mim e do meu trabalho?',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                          textAlign: TextAlign.justify,
+                      const TextSpan(
+                        text: '. Que tal explorar um pouco mais de mim e do meu trabalho? Oi, pode me chamar de Diego! Eu sou ',
+                      ),
+                      TextSpan(
+                        text: 'Desenvolvedor Fullstack',
+                        style: style.copyWith(
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'IBMPlexSansMedium',
                         ),
+                      ),
+                      const TextSpan(
+                        text: '. Que tal explorar um pouco mais de mim e do meu trabalho?',
                       ),
                     ],
                   ),
+                  style: style,
+                  textAlign: TextAlign.justify,
                 ),
               ],
             ),

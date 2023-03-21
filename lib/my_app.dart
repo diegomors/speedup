@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       scrollBehavior: AppScrollBehavior(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        fontFamily: 'IBM Plex Sans',
+        fontFamily: 'IBMPlexSans',
       ),
       home: const MyLandingPage(),
     );
