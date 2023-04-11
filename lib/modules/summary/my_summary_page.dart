@@ -81,6 +81,7 @@ class MySummaryPage extends StatelessWidget {
                   style: style,
                   textAlign: TextAlign.justify,
                 ),
+                const SizedBox(height: 48),
                 const MyListButton(),
               ],
             ),

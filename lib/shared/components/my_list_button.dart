@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components.dart';
+
 class MyListButton extends StatelessWidget {
   const MyListButton({Key? key}) : super(key: key);
 
@@ -8,14 +10,21 @@ class MyListButton extends StatelessWidget {
     return buildRowArea();
   }
 
-  Widget buildRowArea() =>
-      Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        buildButton('Back-end'),
-        buildButton('Front-end'),
-        buildButton('Mobile')
-      ]);
+  Widget buildRowArea() => Wrap(
+          runSpacing: 22,
+          spacing: 8,
+          crossAxisAlignment: WrapCrossAlignment.start,
+          children: [
+            buildButton('Back-end'),
+            buildButton('Front-end'),
+            buildButton('Mobile'),
+            buildButton('Flutter'),
+            buildButton('Java'),
+            buildButton('MVVM'),
+            buildButton('Node.JS'),
+          ]);
 
   Widget buildButton(String text) {
-    return Text(text);
+    return MyButtonBorder(text: text);
   }
 }
