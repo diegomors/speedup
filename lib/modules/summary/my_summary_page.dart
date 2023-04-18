@@ -62,8 +62,7 @@ class MySummaryPage extends StatelessWidget {
                         ),
                       ),
                       const TextSpan(
-                        text:
-                            '. Que tal explorar um pouco mais de mim e do meu trabalho? Oi, pode me chamar de Diego! Eu sou ',
+                        text: '. Que tal explorar um pouco mais de mim e do meu trabalho? Oi, pode me chamar de Diego! Eu sou ',
                       ),
                       TextSpan(
                         text: 'Desenvolvedor Fullstack',
@@ -73,15 +72,28 @@ class MySummaryPage extends StatelessWidget {
                         ),
                       ),
                       const TextSpan(
-                        text:
-                            '. Que tal explorar um pouco mais de mim e do meu trabalho?',
+                        text: '. Que tal explorar um pouco mais de mim e do meu trabalho?',
                       ),
                     ],
                   ),
                   style: style,
                   textAlign: TextAlign.justify,
                 ),
-                const MyListButton(),
+                const SizedBox(height: 48),
+                Wrap(
+                  runSpacing: 22,
+                  spacing: 8,
+                  crossAxisAlignment: WrapCrossAlignment.start,
+                  children: const [
+                    MyButtonBorder('Back-end'),
+                    MyButtonBorder('Front-end'),
+                    MyButtonBorder('Mobile'),
+                    MyButtonBorder('Flutter'),
+                    MyButtonBorder('Java'),
+                    MyButtonBorder('MVVM'),
+                    MyButtonBorder('Node.JS'),
+                  ],
+                ),
               ],
             ),
           ),
